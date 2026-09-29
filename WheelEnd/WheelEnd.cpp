@@ -1,44 +1,34 @@
 #include <iostream>
 
-class WheelEnd
+#include "WheelEnd.hpp"
+
+WheelEnd::WheelEnd(double wheelEndTemp, double wheelEndWear, bool wheelEndReplace)
 {
-private:
-  double temp; // Tepature of the wheelend in F
-  double wear; // Wear on outer bearing of spindle in thousanths of inch
-  bool   needsReplaced; // Bool for if spindle needs replacing
+  temp = wheelEndTemp;
+  wear = wheelEndWear;
+  needsReplaced = wheelEndReplace;
 
-public:
-  // WheelEnd constructor, sets default values for un-init WheelEnd
-  WheelEnd(double wheelEndTemp = 27.0, double wheelEndWear = 0.0, bool wheelEndReplace = false)
+  // Automatically sets needs replaced to true if wear exceeds 8 thousandths
+  if (wear > 0.008)
   {
-    temp = wheelEndTemp;
-    wear = wheelEndWear;
-    needsReplaced = wheelEndReplace;
-
-    // Automatically sets needs replaced to true if wear exceeds 8 thousandths
-    if (wear > 0.008)
-    {
-      needsReplaced = true;
-    }
+    needsReplaced = true;
   }
+}
 
-  // Function to print the info of the WheelEnd
-  void printInfo()
+ void WheelEnd::printInfo()
+{
+  std::cout << "Tempature: " << temp << " degrees F" << std::endl;
+  std::cout << "Wear: " << wear << "\"" << std::endl;
+
+  if (needsReplaced)
   {
-    std::cout << "Tempature: " << temp << " degrees F" << std::endl;
-    std::cout << "Wear: " << wear << "\"" << std::endl;
-
-    if (needsReplaced)
-    {
-      std::cout << "Needs replaced" << std::endl;
-    }
-    else
-    {
-      std::cout << "Does not need replaced" << std::endl;
-    }
+    std::cout << "Needs replaced" << std::endl;
   }
-
-};
+  else
+  {
+    std::cout << "Does not need replaced" << std::endl;
+  }
+}
 
 
 int main()
