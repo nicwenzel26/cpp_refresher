@@ -1,0 +1,14 @@
+# Object Files
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+
+# Executables
+*.exe
+*.out
+*.app
+
+# OS Files
+.DS_Store
