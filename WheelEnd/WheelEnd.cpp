@@ -31,12 +31,3 @@ WheelEnd::WheelEnd(double wheelEndTemp,
     std::cout << "Does not need replaced" << std::endl;
   }
 }
-
-
-int main()
-{
-  WheelEnd swift(28, 0.03);
-  swift.printInfo();
-
-  return 0;
-}
