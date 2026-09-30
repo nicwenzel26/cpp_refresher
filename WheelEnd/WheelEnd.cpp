@@ -17,7 +17,7 @@ WheelEnd::WheelEnd(double wheelEndTemp,
   }
 }
 
- void WheelEnd::printInfo()
+ void WheelEnd::printInfo() const
 {
   std::cout << "Tempature: " << temp << " degrees F" << std::endl;
   std::cout << "Wear: " << wear << "\"" << std::endl;

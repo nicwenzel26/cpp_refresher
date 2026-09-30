@@ -15,5 +15,5 @@ public:
                   bool wheelEndReplace = false);
 
   // Function to print the info of the WheelEnd
-  void printInfo();
+  void printInfo() const;
 };
