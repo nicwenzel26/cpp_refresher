@@ -17,6 +17,7 @@ WheelEnd::WheelEnd(double wheelEndTemp,
   }
 }
 
+// Print info of the wheelend
  void WheelEnd::printInfo() const
 {
   std::cout << "Tempature: " << temperatureF << " degrees F" << std::endl;
@@ -30,4 +31,20 @@ WheelEnd::WheelEnd(double wheelEndTemp,
   {
     std::cout << "Does not need replaced" << std::endl;
   }
+}
+
+// Getters
+double WheelEnd::getTemperatureF() const
+{
+  return(temperatureF);
+}
+
+double WheelEnd::getWearInches() const
+{
+  return(wearInches);
+}
+
+bool WheelEnd::getNeedsReplaced() const
+{
+  return(needsReplaced);
 }

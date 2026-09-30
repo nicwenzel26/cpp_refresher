@@ -16,4 +16,9 @@ public:
 
   // Function to print the info of the WheelEnd
   void printInfo() const;
+
+  // Getters
+  double getTemperatureF() const;
+  double getWearInches() const;
+  bool getNeedsReplaced() const;
 };
