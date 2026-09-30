@@ -13,7 +13,7 @@ WheelEnd::WheelEnd(double wheelEndTemp,
   // Automatically sets needs replaced to true if wear exceeds 8 thousandths
   if (wearInches > 0.008)
   {
-    needsReplaced = true;
+    setNeedsReplaced(true);
   }
 }
 
@@ -47,4 +47,32 @@ double WheelEnd::getWearInches() const
 bool WheelEnd::getNeedsReplaced() const
 {
   return(needsReplaced);
+}
+
+// Setters
+void WheelEnd::setTemperatureF(double newTemp)
+{
+  temperatureF = newTemp;
+}
+
+void WheelEnd::setWearInches(double newWear)
+{
+  if (newWear >= 0.0)
+  {
+    wearInches = newWear;
+
+    if (wearInches > 0.008)
+    {
+      setNeedsReplaced(true);
+    }
+  }
+  else
+  {
+    std::cerr << "Invalid wear, < 0" << std::endl;
+  }
+}
+
+void WheelEnd::setNeedsReplaced(bool newReplaced)
+{
+  needsReplaced = newReplaced;
 }

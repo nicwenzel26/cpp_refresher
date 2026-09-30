@@ -21,4 +21,9 @@ public:
   double getTemperatureF() const;
   double getWearInches() const;
   bool getNeedsReplaced() const;
+
+  // Setters
+  void setTemperatureF(double newTemp);
+  void setWearInches(double newWear);
+  void setNeedsReplaced(bool newReplaced);
 };

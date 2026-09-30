@@ -7,4 +7,7 @@ int main()
   WheelEnd swift = WheelEnd(190, 0.007);
   swift.printInfo();
 
+  swift.setWearInches(0.009);
+  swift.printInfo();
+
 }
