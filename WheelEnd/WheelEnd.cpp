@@ -6,12 +6,12 @@ WheelEnd::WheelEnd(double wheelEndTemp,
                   double wheelEndWear,
                   bool wheelEndReplace)
                   :
-                  temp(wheelEndTemp),
-                  wear(wheelEndWear),
+                  temperatureF(wheelEndTemp),
+                  wearInches(wheelEndWear),
                   needsReplaced(wheelEndReplace)
 {
   // Automatically sets needs replaced to true if wear exceeds 8 thousandths
-  if (wear > 0.008)
+  if (wearInches > 0.008)
   {
     needsReplaced = true;
   }
@@ -19,8 +19,8 @@ WheelEnd::WheelEnd(double wheelEndTemp,
 
  void WheelEnd::printInfo() const
 {
-  std::cout << "Tempature: " << temp << " degrees F" << std::endl;
-  std::cout << "Wear: " << wear << "\"" << std::endl;
+  std::cout << "Tempature: " << temperatureF << " degrees F" << std::endl;
+  std::cout << "Wear: " << wearInches << "\"" << std::endl;
 
   if (needsReplaced)
   {

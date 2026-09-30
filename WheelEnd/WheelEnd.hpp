@@ -4,8 +4,8 @@
 class WheelEnd
 {
 private:
-  double temp; // Tepature of the wheelend in F
-  double wear; // Wear on outer bearing of spindle in thousanths of inch
+  double temperatureF; // Tepature of the wheelend in F
+  double wearInches; // Wear on outer bearing of spindle in inches
   bool   needsReplaced; // Bool for if spindle needs replacing
 
 public:
