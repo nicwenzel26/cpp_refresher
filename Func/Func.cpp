@@ -1,22 +1,22 @@
 #include <iostream>
 
-int sqaured(int x)
+unsigned int squared(unsigned int x)
 {
   return (x * x);
 }
 
-double sqauredDouble(double x)
+double squared(double x) // Overloaded function, compiler will pick this is double is passed in
 {
   return (x * x);
 }
 
 int main()
 {
-  uint x  = 2;
+  unsigned int x  = 2; // Use of uint works but does not make for a portable program
   std::cout << "Let's do ints!!!" << std::endl;
   for (int i = 0; i < 10; i++)
   {
-    x = sqaured(x);
+    x = squared(x);
     std::cout << x << std::endl;
     // Will not make it past i = 3 without overflowing the int data struct
   }
@@ -25,7 +25,7 @@ int main()
   std::cout << "Now for doubles!!!" << std::endl;
   for (int i = 0; i < 10; i++)
   {
-    y = sqauredDouble(y);
+    y = squared(y);
     std::cout << y << std::endl;
   }
 
