@@ -2,12 +2,14 @@
 
 #include "WheelEnd.hpp"
 
-WheelEnd::WheelEnd(double wheelEndTemp, double wheelEndWear, bool wheelEndReplace)
+WheelEnd::WheelEnd(double wheelEndTemp,
+                  double wheelEndWear,
+                  bool wheelEndReplace)
+                  :
+                  temp(wheelEndTemp),
+                  wear(wheelEndWear),
+                  needsReplaced(wheelEndReplace)
 {
-  temp = wheelEndTemp;
-  wear = wheelEndWear;
-  needsReplaced = wheelEndReplace;
-
   // Automatically sets needs replaced to true if wear exceeds 8 thousandths
   if (wear > 0.008)
   {

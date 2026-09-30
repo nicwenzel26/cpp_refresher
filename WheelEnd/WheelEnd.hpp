@@ -1,6 +1,5 @@
-#pragma #ifndef
-
-#include <string>
+#pragma once
+// #pragma once is a more modern way of protecting headers from being processed multiple times if included in multiple files
 
 class WheelEnd
 {
@@ -11,7 +10,9 @@ private:
 
 public:
   // WheelEnd constructor
-  WheelEnd(double wheelEndTemp = 27.0, double wheelEndWear = 0.0, bool wheelEndReplace = false);
+  WheelEnd(double wheelEndTemp = 27.0,
+                  double wheelEndWear = 0.0,
+                  bool wheelEndReplace = false);
 
   // Function to print the info of the WheelEnd
   void printInfo();
